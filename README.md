@@ -184,4 +184,5 @@ Feedstock Maintainers
 =====================
 
 * [@akrherz](https://github.com/akrherz/)
+* [@dbaston](https://github.com/dbaston/)
 
