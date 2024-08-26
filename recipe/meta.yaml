@@ -1,18 +1,17 @@
 {% set name = "exactextract" %}
-{% set version = "0.2.0.dev199" %}
+{% set version = "0.2.0.dev252" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://test-files.pythonhosted.org/packages/81/59/1ab9815dd69e122ba58da030e9e7716f1df3f159ca50cf4c53d7b0ebc552/exactextract-0.2.0.dev199.tar.gz
-  # url: https://test.pypi.io/packages/source/{{ name[0] }}/{{ name }}/exactextract-{{ version }}.tar.gz
-  sha256: 2976e3519da485f13c972e57b0be06902075f15ea957cdc44c04f8ae0bd2056d
+  url: https://test.pypi.io/packages/source/{{ name[0] }}/{{ name }}/exactextract-{{ version }}.tar.gz
+  sha256: b90cda7247b81255fa5a670a8ce834ed0ff605abf7a8fc7bdd026cd7d3bfba19
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 3
+  number: 0
   skip: True  # [win or py==38]
 
 requirements:
