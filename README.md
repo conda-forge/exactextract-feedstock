@@ -100,14 +100,14 @@ Current release info
 Installing exactextract
 =======================
 
-Installing `exactextract` from the `conda-forge/label/exactextract_dev` channel can be achieved by adding `conda-forge/label/exactextract_dev` to your channels with:
+Installing `exactextract` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
-conda config --add channels conda-forge/label/exactextract_dev
+conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge/label/exactextract_dev` channel has been enabled, `exactextract` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `exactextract` can be installed with `conda`:
 
 ```
 conda install exactextract
@@ -122,26 +122,26 @@ mamba install exactextract
 It is possible to list all of the versions of `exactextract` available on your platform with `conda`:
 
 ```
-conda search exactextract --channel conda-forge/label/exactextract_dev
+conda search exactextract --channel conda-forge
 ```
 
 or with `mamba`:
 
 ```
-mamba search exactextract --channel conda-forge/label/exactextract_dev
+mamba search exactextract --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search exactextract --channel conda-forge/label/exactextract_dev
+mamba repoquery search exactextract --channel conda-forge
 
 # List packages depending on `exactextract`:
-mamba repoquery whoneeds exactextract --channel conda-forge/label/exactextract_dev
+mamba repoquery whoneeds exactextract --channel conda-forge
 
 # List dependencies of `exactextract`:
-mamba repoquery depends exactextract --channel conda-forge/label/exactextract_dev
+mamba repoquery depends exactextract --channel conda-forge
 ```
 
 
