@@ -38,7 +38,7 @@ test:
   imports:
     - exactextract
   commands:
-    - pip check
+    - {{ PYTHON }} -m pip check
   requires:
     - pip
 
