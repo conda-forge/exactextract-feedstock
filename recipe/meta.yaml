@@ -1,5 +1,5 @@
 {% set name = "exactextract" %}
-{% set version = "0.2.2" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/exactextract-{{ version }}.tar.gz
-  sha256: 5e96ee444efd65af69b8d930d14aefa0c2d212d115076590f5d57799ff5cd8f7
+  sha256: 5864eab819474967e30c6a0118af3658da08d0b5ec1c2b8f747fb009b6b7856c
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
   skip: true  # [py==38]
 
 requirements:
