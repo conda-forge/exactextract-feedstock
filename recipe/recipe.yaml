@@ -1,0 +1,63 @@
+schema_version: 1
+
+context:
+  name: exactextract
+  version: "0.3.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/exactextract-${{ version }}.tar.gz
+  sha256: 5864eab819474967e30c6a0118af3658da08d0b5ec1c2b8f747fb009b6b7856c
+
+build:
+  number: 5
+  skip: match(python, "==3.8")
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - cmake
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - make
+    - ${{ stdlib("c") }}
+  host:
+    - python
+    - geos
+    - libgdal-core
+    - scikit-build-core
+    - pybind11
+    - pip
+  run:
+    - python
+    - numpy
+
+tests:
+  - python:
+      imports:
+        - exactextract
+      pip_check: false
+  - requirements:
+      run:
+        - pip
+    script:
+      - if: build_platform == target_platform
+        then: pip check
+
+about:
+  summary: Fast and accurate raster zonal statistics
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/isciences/exactextract
+
+extra:
+  recipe-maintainers:
+    - dbaston
+    - akrherz
