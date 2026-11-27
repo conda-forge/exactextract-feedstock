@@ -30,6 +30,7 @@ requirements:
     - ${{ stdlib("c") }}
   host:
     - python
+    - libpython
     - geos
     - libgdal-core
     - scikit-build-core
